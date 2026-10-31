@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#071321">
-  <meta name="description" content="The official website of Violin Prince, the violin artist project of Prince Baidya. Discover selected violin performances, the artist's story, official music platforms and the complete music collection.">
+  <meta name="description" content="The official artist website of Prince Baidya, Violin Prince. Explore Bengali, Rabindra Sangeet, Hindi and English violin covers, featured performances and the full music collection.">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <title>Violin Prince | Official Artist Website — Prince Baidya</title>
   <link rel="canonical" href="https://baidyaprince69-web.github.io/">
@@ -16,13 +16,13 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Violin Prince">
   <meta property="og:title" content="Violin Prince | Official Artist Website">
-  <meta property="og:description" content="Meet Prince Baidya, discover selected violin performances and enter the complete Violin Prince music collection.">
+  <meta property="og:description" content="Meet Prince Baidya, explore Bengali, Rabindra Sangeet, Hindi and English violin performances, discover the production guide and enter the complete music collection.">
   <meta property="og:url" content="https://baidyaprince69-web.github.io/">
   <meta property="og:image" content="https://baidyaprince69-web.github.io/violin-prince-website/assets/violin-prince-cinematic-hero.jpg">
   <meta property="og:image:alt" content="Prince Baidya performing on violin in a cinematic stage setting">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Violin Prince | Official Artist Website">
-  <meta name="twitter:description" content="The official home of Prince Baidya, violinist and creator behind Violin Prince.">
+  <meta name="twitter:description" content="The official home of Prince Baidya: violin performances, musical styles, recording insights and the complete Violin Prince collection.">
   <meta name="twitter:image" content="https://baidyaprince69-web.github.io/violin-prince-website/assets/violin-prince-cinematic-hero.jpg">
   <meta name="google-site-verification" content="nfRI27jrt7eVQlcP4EXnjuj0-EKXiBt4lK39-cYJubM">
   <script type="application/ld+json">
@@ -577,6 +577,137 @@
     @media (prefers-reduced-motion: reduce) {
       .hero-actions .button { transition: none; }
     }
+
+    /* Extended artist-home sections: repertoire, curated paths, production and FAQ. */
+    .repertoire-section { padding: 18px 0 104px; }
+    .repertoire-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px; }
+    .repertoire-card {
+      position:relative; min-height:264px; overflow:hidden;
+      display:flex; flex-direction:column; align-items:flex-start;
+      padding:22px 20px 20px;
+      border:1px solid rgba(231,189,114,.18); border-radius:15px;
+      color:var(--ivory); text-decoration:none;
+      background:
+        radial-gradient(ellipse at 92% 8%, rgba(231,189,114,.10), transparent 45%),
+        linear-gradient(155deg, rgba(255,255,255,.055), rgba(255,255,255,.018));
+      transition:transform .22s ease,border-color .22s ease,background .22s ease,box-shadow .22s ease;
+    }
+    .repertoire-card:hover { transform:translateY(-4px); border-color:rgba(231,189,114,.46); box-shadow:0 18px 40px rgba(0,0,0,.2); }
+    .repertoire-number,.pathway-kicker { color:var(--gold); font-size:8px; font-weight:800; letter-spacing:.17em; }
+    .repertoire-symbol {
+      width:46px; height:46px; display:grid; place-items:center;
+      margin:25px 0 17px; border:1px solid rgba(231,189,114,.25); border-radius:50%;
+      color:var(--gold-bright); background:rgba(7,19,33,.45);
+      font:500 19px/1 var(--serif);
+    }
+    .repertoire-card h3 { margin:0 0 8px; font:600 25px/1.05 var(--serif); }
+    .repertoire-card p { margin:0 0 18px; color:#b8c4ce; font-size:11px; line-height:1.75; }
+    .repertoire-link { margin-top:auto; color:var(--gold-bright); font-size:9px; font-weight:800; }
+
+    .track-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .track-card { display:flex; flex-direction:column; }
+    .track-image { aspect-ratio:16/9; }
+    .track-copy { display:flex; flex:1; flex-direction:column; align-items:flex-start; }
+    .track-copy p { min-height:0; }
+    .track-copy a { margin-top:auto; padding-top:8px; }
+
+    .pathway-section { padding: 10px 0 106px; }
+    .pathway-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:15px; }
+    .pathway-card {
+      min-height:260px; display:flex; flex-direction:column; align-items:flex-start;
+      padding:24px; border:1px solid rgba(231,189,114,.17); border-radius:16px;
+      background:linear-gradient(145deg,rgba(13,34,53,.8),rgba(7,18,31,.78));
+      color:var(--ivory); text-decoration:none;
+      transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease;
+    }
+    .pathway-card:hover { transform:translateY(-4px); border-color:rgba(231,189,114,.48); box-shadow:0 18px 40px rgba(0,0,0,.22); }
+    .pathway-icon { margin:23px 0 15px; color:var(--gold-bright); font:500 31px/1 var(--serif); }
+    .pathway-card h3 { margin:0 0 9px; font:600 27px/1.05 var(--serif); }
+    .pathway-card p { margin:0 0 20px; color:#b7c3ce; font-size:11px; line-height:1.8; }
+    .pathway-arrow { margin-top:auto; color:var(--gold-bright); font-size:9px; font-weight:800; }
+
+    .studio-section {
+      position:relative; overflow:hidden; padding:102px 0;
+      border-top:1px solid rgba(231,189,114,.12);
+      border-bottom:1px solid rgba(231,189,114,.12);
+      background:
+        radial-gradient(ellipse at 90% 45%,rgba(44,104,145,.15),transparent 40%),
+        linear-gradient(130deg,rgba(10,28,45,.92),rgba(5,15,27,.98));
+    }
+    .studio-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,.95fr); gap:clamp(34px,7vw,88px); align-items:center; }
+    .studio-copy h2 { margin:0; font:500 clamp(40px,5vw,64px)/.98 var(--serif); letter-spacing:-.025em; }
+    .studio-copy h2 em { color:var(--gold-bright); font-weight:500; }
+    .studio-copy .eyebrow { margin-bottom:15px; }
+    .studio-lead { margin:22px 0 12px; color:#e1e7ec; font:500 18px/1.65 var(--serif); }
+    .studio-copy p:not(.eyebrow):not(.studio-lead) { max-width:590px; color:#b7c3ce; font-size:12px; line-height:1.9; }
+    .studio-copy .button { margin-top:15px; }
+    .studio-details { padding:26px; border:1px solid rgba(231,189,114,.18); border-radius:17px; background:rgba(255,255,255,.025); }
+    .studio-detail { display:grid; grid-template-columns:38px 1fr; gap:13px; padding:14px 0; }
+    .studio-detail + .studio-detail { border-top:1px solid rgba(231,189,114,.11); }
+    .studio-detail > span { color:var(--gold); font:500 18px/1.2 var(--serif); }
+    .studio-detail h3 { margin:0 0 5px; color:#f5ead7; font:600 23px/1 var(--serif); }
+    .studio-detail p { margin:0; color:#aebdca; font-size:10px; line-height:1.75; }
+    .studio-footnote { margin:15px 0 0; padding-top:14px; border-top:1px solid rgba(231,189,114,.11); color:#91a2b0; font-size:9px; line-height:1.7; }
+
+    .faq-section { display:grid; grid-template-columns:minmax(250px,.7fr) minmax(0,1.3fr); gap:clamp(30px,7vw,92px); padding:100px 0; }
+    .faq-intro h2 { margin:0; font:500 clamp(40px,5vw,62px)/.98 var(--serif); }
+    .faq-intro h2 em { color:var(--gold-bright); font-weight:500; }
+    .faq-list { border-top:1px solid rgba(231,189,114,.18); }
+    .faq-item { border-bottom:1px solid rgba(231,189,114,.18); }
+    .faq-item summary {
+      position:relative; padding:19px 38px 19px 0;
+      color:#f1e7d7; font:600 23px/1.2 var(--serif);
+      list-style:none; cursor:pointer;
+    }
+    .faq-item summary::-webkit-details-marker { display:none; }
+    .faq-item summary::after { content:"+"; position:absolute; right:3px; top:17px; color:var(--gold); font:400 24px/1 var(--sans); }
+    .faq-item[open] summary::after { content:"−"; }
+    .faq-item p { max-width:720px; margin:0; padding:0 35px 19px 0; color:#b8c4ce; font-size:11px; line-height:1.85; }
+    .faq-item a { color:var(--gold-bright); text-decoration:underline; text-underline-offset:3px; }
+
+    .contact-band {
+      display:flex; align-items:center; justify-content:space-between; gap:28px;
+      margin-bottom:100px; padding:clamp(26px,5vw,50px);
+      border:1px solid rgba(231,189,114,.28); border-radius:18px;
+      background:
+        radial-gradient(ellipse at 86% 0%,rgba(231,189,114,.12),transparent 45%),
+        linear-gradient(120deg,rgba(13,34,53,.92),rgba(6,18,31,.94));
+    }
+    .contact-band .eyebrow { margin-bottom:12px; }
+    .contact-band h2 { margin:0; font:500 clamp(36px,4.5vw,54px)/1 var(--serif); }
+    .contact-band h2 em { color:var(--gold-bright); }
+    .contact-band p:not(.eyebrow) { max-width:600px; margin:12px 0 0; color:#b7c3ce; font-size:12px; line-height:1.8; }
+    .contact-band .button { flex-shrink:0; }
+
+    @media (max-width: 980px) {
+      .repertoire-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .track-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .studio-grid { grid-template-columns:1fr; gap:32px; }
+      .faq-section { grid-template-columns:1fr; gap:28px; }
+    }
+    @media (max-width: 760px) {
+      .repertoire-section,.pathway-section { padding-top:0; padding-bottom:76px; }
+      .repertoire-grid { gap:11px; }
+      .repertoire-card { min-height:230px; padding:18px 16px; }
+      .repertoire-symbol { width:40px; height:40px; margin:20px 0 14px; }
+      .repertoire-card h3 { font-size:22px; }
+      .track-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .pathway-grid { grid-template-columns:1fr; }
+      .pathway-card { min-height:210px; }
+      .studio-section { padding:76px 0; }
+      .studio-details { padding:18px; }
+      .faq-section { padding:76px 0; }
+      .faq-item summary { font-size:21px; }
+      .contact-band { align-items:flex-start; flex-direction:column; margin-bottom:76px; }
+      .contact-band .button { width:100%; }
+    }
+    @media (max-width: 420px) {
+      .repertoire-grid { grid-template-columns:1fr; }
+      .repertoire-card { min-height:195px; }
+      .track-grid { grid-template-columns:1fr; }
+      .faq-item summary { font-size:19px; }
+    }
+
   </style>
 </head>
 <body>
@@ -588,11 +719,12 @@
       </a>
       <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-navigation">☰</button>
       <nav class="nav" id="primary-navigation" aria-label="Main navigation">
-        <a href="#artist">The artist</a>
-        <a href="#performances">Selected music</a>
+        <a href="#artist">Artist</a>
+        <a href="#repertoire">Music styles</a>
+        <a href="#performances">Performances</a>
+        <a href="#studio">Production</a>
         <a href="#connect">Follow</a>
-        <a href="/violin-prince-website/#request">Contact / song requests</a>
-        <a class="nav-collection" href="/violin-prince-website/">Explore the music collection ↗</a>
+        <a class="nav-collection" href="/violin-prince-website/">Explore the collection ↗</a>
       </nav>
     </div>
   </header>
@@ -626,10 +758,53 @@
         <div class="artist-copy" data-reveal>
           <p class="eyebrow">The person behind the strings</p>
           <h2 id="artist-title">A familiar melody,<br><em>a different voice.</em></h2>
-          <p>I'm Prince Baidya, the violinist behind Violin Prince. I create instrumental interpretations of songs that carry a feeling, a memory or a story worth returning to.</p>
-          <p>My musical world moves across Bengali songs, Rabindra Sangeet, Hindi melodies and English favourites. This website is the starting point for discovering the artist and the music; the dedicated collection is where the performances, moods and listening experiences come together.</p>
-          <a class="button button-secondary" href="https://www.youtube.com/@violinprince" target="_blank" rel="noopener noreferrer">Meet me through the performances ↗</a>
+          <p>I'm Prince Baidya, the violinist and creator behind Violin Prince. This project is about bringing familiar melodies into a different voice: the violin. Each cover begins with a song people already know and approaches it as an instrumental performance.</p>
+          <p>The repertoire moves across Bengali songs, Rabindra Sangeet, Hindi film and indie melodies, and English favourites. Some listeners arrive for a familiar tune; others discover a song they have never heard before. The aim is to give each melody room to speak through the instrument.</p>
+          <p>This website is the artist home: a place to understand the project, find selected performances and follow the official profiles. The companion music collection is where the full library, mood explorer, individual song pages and listening tools live.</p>
+          <a class="button button-secondary" href="https://www.youtube.com/@violinprince" target="_blank" rel="noopener noreferrer">Watch the performances ↗</a>
         </div>
+      </div>
+    </section>
+
+
+    <section class="repertoire-section wrap" id="repertoire" aria-labelledby="repertoire-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">One instrument · many musical worlds</p>
+          <h2 id="repertoire-title">Follow the melody <em>wherever it leads.</em></h2>
+          <p class="section-intro">Violin Prince moves between musical languages and traditions. These are some of the listening worlds represented in the collection.</p>
+        </div>
+        <a class="text-link" href="/violin-prince-website/#music">Browse the full library ↗</a>
+      </div>
+      <div class="repertoire-grid">
+        <a class="repertoire-card repertoire-bengali" href="/violin-prince-website/#music" data-reveal>
+          <span class="repertoire-number">01 / BENGALI</span>
+          <span class="repertoire-symbol" aria-hidden="true">আ</span>
+          <h3>Bengali melodies</h3>
+          <p>Familiar songs and contemporary favourites, reimagined for violin.</p>
+          <span class="repertoire-link">Explore the collection ↗</span>
+        </a>
+        <a class="repertoire-card repertoire-rabindra" href="/violin-prince-website/#music" data-reveal>
+          <span class="repertoire-number">02 / RABINDRA SANGEET</span>
+          <span class="repertoire-symbol" aria-hidden="true">র</span>
+          <h3>Rabindra Sangeet</h3>
+          <p>Poetic melodies and expressive musical lines in an instrumental voice.</p>
+          <span class="repertoire-link">Explore the collection ↗</span>
+        </a>
+        <a class="repertoire-card repertoire-hindi" href="/violin-prince-website/#music" data-reveal>
+          <span class="repertoire-number">03 / HINDI</span>
+          <span class="repertoire-symbol" aria-hidden="true">हि</span>
+          <h3>Hindi favourites</h3>
+          <p>Film songs and indie melodies shaped around the violin's singing tone.</p>
+          <span class="repertoire-link">Explore the collection ↗</span>
+        </a>
+        <a class="repertoire-card repertoire-world" href="/violin-prince-website/#music" data-reveal>
+          <span class="repertoire-number">04 / ENGLISH & BEYOND</span>
+          <span class="repertoire-symbol" aria-hidden="true">♪</span>
+          <h3>Songs from elsewhere</h3>
+          <p>English-language favourites and melodies that travel across borders.</p>
+          <span class="repertoire-link">Explore the collection ↗</span>
+        </a>
       </div>
     </section>
 
@@ -667,6 +842,52 @@
           </a>
           <div class="track-copy"><small>Hindi classic · Violin cover</small><h3>Hai Apna Dil To Awara</h3><p>A classic melody carried by the violin.</p><a href="/violin-prince-website/hai-apna-dil-to-awara/">Explore this performance ↗</a></div>
         </article>
+        <article class="track-card" data-reveal>
+          <a class="track-image" href="/violin-prince-website/dandelions/" aria-label="Explore Dandelions violin cover">
+            <img src="https://i.ytimg.com/vi/lTySNtT0rzs/hqdefault.jpg" width="480" height="300" alt="Dandelions violin cover artwork" loading="lazy"><span class="track-play" aria-hidden="true">▶</span>
+          </a>
+          <div class="track-copy"><small>English · Violin cover</small><h3>Dandelions</h3><p>A modern favourite translated into a violin-led interpretation.</p><a href="/violin-prince-website/dandelions/">Explore this performance ↗</a></div>
+        </article>
+        <article class="track-card" data-reveal>
+          <a class="track-image" href="/violin-prince-website/preme-pora-baron/" aria-label="Explore Preme Pora Baron violin cover">
+            <img src="https://i.ytimg.com/vi/UK7JYzoKKd4/hqdefault.jpg" width="480" height="300" alt="Preme Pora Baron violin cover artwork" loading="lazy"><span class="track-play" aria-hidden="true">▶</span>
+          </a>
+          <div class="track-copy"><small>Bengali · Violin cover</small><h3>Preme Pora Baron</h3><p>A Bengali song brought into the Violin Prince repertoire.</p><a href="/violin-prince-website/preme-pora-baron/">Explore this performance ↗</a></div>
+        </article>
+      </div>
+    </section>
+
+
+    <section class="pathway-section wrap" aria-labelledby="pathway-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Your next listening stop</p>
+          <h2 id="pathway-title">There is more than one way <em>to explore.</em></h2>
+          <p class="section-intro">Go straight to a song, browse the library, or let a mood guide your next choice. The music collection is built for all three.</p>
+        </div>
+      </div>
+      <div class="pathway-grid">
+        <a class="pathway-card" href="/violin-prince-website/#moods" data-reveal>
+          <span class="pathway-kicker">01 / DISCOVER</span>
+          <span class="pathway-icon" aria-hidden="true">✧</span>
+          <h3>Start with a feeling</h3>
+          <p>Use the mood explorer to find a listening direction when you do not have a song in mind.</p>
+          <span class="pathway-arrow">Open mood explorer ↗</span>
+        </a>
+        <a class="pathway-card" href="/violin-prince-website/#music" data-reveal>
+          <span class="pathway-kicker">02 / BROWSE</span>
+          <span class="pathway-icon" aria-hidden="true">♫</span>
+          <h3>Browse every cover</h3>
+          <p>Explore the growing song library, use the available filters and choose a performance to revisit.</p>
+          <span class="pathway-arrow">Open music library ↗</span>
+        </a>
+        <a class="pathway-card" href="/violin-prince-website/kal-ho-na-ho/" data-reveal>
+          <span class="pathway-kicker">03 / GO DEEPER</span>
+          <span class="pathway-icon" aria-hidden="true">◈</span>
+          <h3>Enter a song story</h3>
+          <p>Visit a dedicated cover page for its artwork, listening experience and related details.</p>
+          <span class="pathway-arrow">Visit a song page ↗</span>
+        </a>
       </div>
     </section>
 
@@ -686,6 +907,73 @@
           <li><span>✦</span> Song requests and artist updates</li>
         </ul>
       </div>
+    </section>
+
+
+    <section class="studio-section" id="studio" aria-labelledby="studio-title">
+      <div class="wrap studio-grid">
+        <div class="studio-copy" data-reveal>
+          <p class="eyebrow">Beyond the performance</p>
+          <h2 id="studio-title">The craft behind <em>the sound.</em></h2>
+          <p class="studio-lead">A violin recording is shaped by more than the notes. The recording, tone, dynamics and sense of space all influence how a performance reaches the listener.</p>
+          <p>The Violin Production Playbook is a practical guide created by Prince Baidya for violinists and home-recording musicians. It organises tools by purpose and walks through starting points for a natural lead, an expressive indie tone and a fuller chorus sound.</p>
+          <a class="button button-primary" href="/violin-prince-website/production-playbook/">Explore the free production guide ↗</a>
+        </div>
+        <div class="studio-details" data-reveal>
+          <div class="studio-detail">
+            <span>01</span>
+            <div><h3>Shape the tone</h3><p>Understand gain, corrective EQ and gentle dynamics before adding creative processing.</p></div>
+          </div>
+          <div class="studio-detail">
+            <span>02</span>
+            <div><h3>Build a character</h3><p>Explore optional colour, saturation and effects when they support the musical idea.</p></div>
+          </div>
+          <div class="studio-detail">
+            <span>03</span>
+            <div><h3>Make room for the melody</h3><p>Use ambience, delay and stereo choices with care so the lead stays clear in the mix.</p></div>
+          </div>
+          <p class="studio-footnote">The guide offers audition starting points, not universal presets. Listen in the context of the full mix.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section wrap" id="faq" aria-labelledby="faq-title">
+      <div class="faq-intro">
+        <p class="eyebrow">A little more about the project</p>
+        <h2 id="faq-title">Questions, <em>answered.</em></h2>
+        <p class="section-intro">A quick guide for listeners discovering Violin Prince for the first time.</p>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Who is behind Violin Prince?</summary>
+          <p>Violin Prince is the artist project of Prince Baidya, built around instrumental violin interpretations of familiar songs and melodies.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What kinds of music can I find here?</summary>
+          <p>The repertoire includes Bengali songs, Rabindra Sangeet, Hindi melodies and English-language favourites. The full collection brings these performances together in one place.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Where can I browse the complete music library?</summary>
+          <p>Visit the dedicated <a href="/violin-prince-website/">Violin Prince Music Collection</a> to browse covers, explore by mood, use the available filters and open individual song pages.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can I suggest a song for a future violin cover?</summary>
+          <p>Yes. Use the song-request form on the <a href="/violin-prince-website/#request">music collection website</a> to send a suggestion.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Is there a guide to violin recording and production?</summary>
+          <p>Yes. The <a href="/violin-prince-website/production-playbook/">free Violin Production Playbook</a> covers practical starting points for recording, tone shaping, effects and mixing.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="contact-band wrap" id="contact" aria-labelledby="contact-title">
+      <div class="contact-band-copy">
+        <p class="eyebrow">Your turn to choose the melody</p>
+        <h2 id="contact-title">Have a song <em>in mind?</em></h2>
+        <p>Send a suggestion through the music collection. A familiar melody could become part of a future listening journey.</p>
+      </div>
+      <a class="button button-primary" href="/violin-prince-website/#request">Suggest a song ↗</a>
     </section>
 
     <section class="wrap social-section" id="connect" aria-labelledby="connect-title">
