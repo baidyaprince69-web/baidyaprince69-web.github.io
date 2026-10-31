@@ -21,18 +21,32 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Prince Baidya",
-    "alternateName": "Violin Prince",
-    "url": "https://baidyaprince69-web.github.io/",
-    "sameAs": [
-      "https://www.youtube.com/@violinprince",
-      "https://www.instagram.com/princ_estrings/",
-      "https://www.facebook.com/profile.php?id=100086948485717",
-      "https://soundcloud.com/prince-baidya",
-      "https://www.bandlab.com/prince_bbb",
-      "https://www.quora.com/profile/P-B-Violin-Music",
-      "https://discord.gg/G7FDts766"
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://baidyaprince69-web.github.io/#website",
+        "url": "https://baidyaprince69-web.github.io/",
+        "name": "Violin Prince",
+        "publisher": {
+          "@id": "https://baidyaprince69-web.github.io/#person"
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://baidyaprince69-web.github.io/#person",
+        "name": "Prince Baidya",
+        "alternateName": "Violin Prince",
+        "url": "https://baidyaprince69-web.github.io/",
+        "sameAs": [
+          "https://www.youtube.com/@violinprince",
+          "https://www.instagram.com/princ_estrings/",
+          "https://www.facebook.com/profile.php?id=100086948485717",
+          "https://soundcloud.com/prince-baidya",
+          "https://www.bandlab.com/prince_bbb",
+          "https://www.quora.com/profile/P-B-Violin-Music",
+          "https://discord.gg/G7FDts766"
+        ]
+      }
     ]
   }
   </script>
@@ -185,6 +199,9 @@
     }
     footer a { color: var(--gold); text-decoration: none; }
     footer a:hover { text-decoration: underline; text-underline-offset: 4px; }
+    .social-links { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+    .social-links a { color: var(--gold); text-decoration: none; }
+    .social-links a:hover { text-decoration: underline; text-underline-offset: 4px; }
     a:focus-visible { outline: 3px solid var(--gold-light); outline-offset: 4px; }
     @media (max-width: 760px) {
       .site-shell { width: calc(100% - 36px); }
@@ -237,6 +254,14 @@
       </section>
     </main>
     <footer>
+      <div class="social-links" aria-label="Official Violin Prince profiles">
+        <a href="https://www.youtube.com/@violinprince" target="_blank" rel="noopener noreferrer">YouTube</a>
+        <a href="https://www.instagram.com/princ_estrings/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://soundcloud.com/prince-baidya" target="_blank" rel="noopener noreferrer">SoundCloud</a>
+        <a href="https://www.facebook.com/profile.php?id=100086948485717" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="https://www.bandlab.com/prince_bbb" target="_blank" rel="noopener noreferrer">BandLab</a>
+        <a href="https://www.quora.com/profile/P-B-Violin-Music" target="_blank" rel="noopener noreferrer">Quora</a>
+      </div>
       <span>© <span id="year">2026</span> Violin Prince · Prince Baidya</span>
       <a href="https://baidyaprince69-web.github.io/violin-prince-website/">Visit the full music website ↗</a>
     </footer>
