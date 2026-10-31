@@ -65,7 +65,7 @@
           category: "Rabindra Sangeet",
           detail: "Explore a dedicated Tagore-song performance page.",
           href: "/violin-prince-website/majhe-majhe-tobo/",
-          image: "https://i.ytimg.com/vi/0f8d848122b096ed5c26d6a1b5b348f9201d01fc/hqdefault.jpg"
+          image: "https://i.ytimg.com/vi/vAinuVKLKGE/hqdefault.jpg"
         }
       ]
     },
