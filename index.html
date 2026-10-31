@@ -440,11 +440,11 @@
       [data-reveal] { opacity:1; transform:none; }
     }
   
-    /* Full-bleed Violin Prince silhouette artwork: midnight blue, soft moonlight, restrained gold. */
+    /* Official first-screen cover: use the original cinematic violin photograph. */
     .hero {
       width: 100%;
       max-width: none;
-      min-height: min(850px, calc(100svh - 82px));
+      min-height: min(860px, calc(100svh - 82px));
       margin: 0;
       padding: clamp(58px, 8vw, 112px) max(24px, calc((100vw - 1160px) / 2));
       display: flex;
@@ -455,11 +455,18 @@
       overflow: hidden;
       background-color: #071321;
       background-image:
-        linear-gradient(90deg, rgba(5, 15, 27, .02) 0%, rgba(5, 15, 27, .10) 43%, rgba(5, 15, 27, .34) 100%),
-        linear-gradient(180deg, rgba(4, 12, 22, .14), transparent 22%, rgba(4, 12, 22, .20)),
-        url("/assets/violin-prince-silhouette-hero.webp");
+        linear-gradient(90deg,
+          rgba(5, 15, 27, .02) 0%,
+          rgba(5, 15, 27, .08) 42%,
+          rgba(5, 15, 27, .42) 72%,
+          rgba(5, 15, 27, .60) 100%),
+        linear-gradient(180deg,
+          rgba(4, 12, 22, .12) 0%,
+          transparent 28%,
+          rgba(4, 12, 22, .18) 100%),
+        url("/violin-prince-website/assets/violin-prince-cinematic-hero.jpg");
       background-size: cover;
-      background-position: left center;
+      background-position: center center;
       background-repeat: no-repeat;
     }
     .hero::before {
@@ -468,9 +475,7 @@
       inset: 0;
       z-index: 0;
       pointer-events: none;
-      background:
-        linear-gradient(90deg, transparent 0%, rgba(6, 19, 34, .04) 38%, rgba(6, 19, 34, .22) 100%),
-        linear-gradient(0deg, rgba(4, 12, 22, .20), transparent 25%, rgba(4, 12, 22, .06));
+      background: linear-gradient(0deg, rgba(4, 12, 22, .16), transparent 24%);
     }
     .hero-copy {
       position: relative;
@@ -478,18 +483,18 @@
       width: min(560px, 48vw);
       max-width: 560px;
       margin-left: auto;
-      text-shadow: 0 2px 22px rgba(0, 0, 0, .26);
+      text-shadow: 0 2px 22px rgba(0, 0, 0, .34);
     }
     .hero-visual { display: none !important; }
     .hero h1 { max-width: 590px; }
-    .hero-text { color: #d0d9e2; }
-    .hero-notes { color: #bdc9d4; }
+    .hero-text { color: #d6dfe7; }
+    .hero-notes { color: #c2ced8; }
     @media (max-width: 980px) {
       .hero {
-        min-height: min(760px, calc(100svh - 82px));
+        min-height: min(780px, calc(100svh - 82px));
         padding-left: 34px;
         padding-right: 34px;
-        background-position: left center;
+        background-position: 46% center;
       }
       .hero-copy { width: min(530px, 53vw); }
     }
@@ -497,23 +502,26 @@
       .hero {
         width: 100%;
         min-height: calc(100svh - 72px);
-        padding: 300px 20px 52px;
+        padding: 330px 20px 48px;
         align-items: flex-end;
         justify-content: center;
         background-size: auto 100%;
-        background-position: 29% center;
+        background-position: 43% center;
       }
       .hero::before {
         background:
-          linear-gradient(0deg, rgba(4, 12, 22, .94) 0%, rgba(4, 12, 22, .78) 34%, rgba(4, 12, 22, .18) 68%, rgba(4, 12, 22, .08) 100%),
-          linear-gradient(90deg, rgba(6, 19, 34, .05), rgba(6, 19, 34, .16));
+          linear-gradient(0deg,
+            rgba(4, 12, 22, .96) 0%,
+            rgba(4, 12, 22, .84) 30%,
+            rgba(4, 12, 22, .34) 59%,
+            rgba(4, 12, 22, .06) 100%);
       }
       .hero-copy {
         width: 100%;
         max-width: 560px;
         margin: 0 auto;
         padding: 0;
-        text-shadow: 0 2px 18px rgba(0, 0, 0, .38);
+        text-shadow: 0 2px 18px rgba(0, 0, 0, .44);
       }
       .hero h1 { font-size: clamp(48px, 11vw, 68px); }
       .hero-text { max-width: 520px; }
@@ -521,13 +529,12 @@
     @media (max-width: 420px) {
       .hero {
         min-height: calc(100svh - 72px);
-        padding: 280px 18px 42px;
-        background-position: 30% center;
+        padding: 300px 18px 40px;
+        background-position: 43% center;
       }
       .hero h1 { font-size: clamp(44px, 11.6vw, 56px); }
       .hero-actions { flex-direction: column; align-items: stretch; }
     }
-
   </style>
 </head>
 <body>
