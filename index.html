@@ -708,6 +708,58 @@
       .faq-item summary { font-size:19px; }
     }
 
+
+    /* Editorial artist-story section */
+    .approach-section {
+      position:relative;
+      padding:78px 0 96px;
+      border-top:1px solid rgba(231,189,114,.13);
+      border-bottom:1px solid rgba(231,189,114,.13);
+      background:
+        radial-gradient(ellipse at 8% 12%,rgba(36,104,143,.16),transparent 34rem),
+        linear-gradient(145deg,rgba(11,28,46,.9),rgba(5,13,23,.92));
+    }
+    .approach-heading { max-width:760px; margin-bottom:34px; }
+    .approach-heading h2 { max-width:720px; }
+    .approach-heading .section-intro { max-width:690px; }
+    .approach-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:15px; }
+    .approach-card {
+      position:relative; min-height:245px; overflow:hidden;
+      padding:25px 23px 24px;
+      border:1px solid rgba(231,189,114,.18); border-radius:16px;
+      background:
+        radial-gradient(circle at 95% 4%,rgba(231,189,114,.09),transparent 45%),
+        linear-gradient(155deg,rgba(255,255,255,.055),rgba(255,255,255,.018));
+      transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease;
+    }
+    .approach-card:hover { transform:translateY(-4px); border-color:rgba(231,189,114,.46); box-shadow:0 18px 40px rgba(0,0,0,.2); }
+    .approach-number { color:var(--gold); font-size:8px; font-weight:800; letter-spacing:.2em; }
+    .approach-icon {
+      width:42px; height:42px; display:grid; place-items:center;
+      margin:22px 0 16px; border:1px solid rgba(231,189,114,.28); border-radius:50%;
+      color:var(--gold-bright); background:rgba(7,19,33,.5); font:500 20px var(--serif);
+    }
+    .approach-card h3 { margin:0 0 10px; color:var(--ivory); font:600 25px/1.05 var(--serif); }
+    .approach-card p { margin:0; color:#b8c4ce; font-size:11px; line-height:1.85; }
+    .approach-note {
+      margin:18px 0 0; padding:17px 20px;
+      border-left:2px solid var(--gold);
+      color:#c5ced7; background:rgba(255,255,255,.025);
+      font-size:12px; line-height:1.85;
+    }
+    .artist-copy p:not(.eyebrow) { max-width:650px; }
+    @media (max-width: 980px) {
+      .approach-grid { grid-template-columns:repeat(3,minmax(0,1fr)); gap:11px; }
+      .approach-card { padding:21px 18px; }
+      .approach-card h3 { font-size:22px; }
+    }
+    @media (max-width: 760px) {
+      .approach-section { padding:65px 0 72px; }
+      .approach-grid { grid-template-columns:1fr; }
+      .approach-card { min-height:0; }
+      .approach-icon { margin:15px 0 13px; }
+    }
+
   </style>
 </head>
 <body>
@@ -721,6 +773,7 @@
       <nav class="nav" id="primary-navigation" aria-label="Main navigation">
         <a href="#artist">Artist</a>
         <a href="#repertoire">Music styles</a>
+        <a href="#approach">Approach</a>
         <a href="#performances">Performances</a>
         <a href="#studio">Production</a>
         <a href="#connect">Follow</a>
@@ -743,6 +796,20 @@
         <p class="hero-notes"><span>Independent violin music</span><span>Bengali · Hindi · English</span><span>Made by Prince Baidya</span></p>
       </div>
 
+      <div class="hero-visual" data-reveal>
+        <div class="hero-frame">
+          <img src="/violin-prince-website/assets/violin-prince-cinematic-hero.jpg"
+               width="1000" height="1250"
+               alt="Prince Baidya performing with the violin in the Violin Prince cinematic artwork"
+               decoding="async" fetchpriority="high">
+          <div class="hero-caption">
+            <div><strong>Prince Baidya</strong><small>Violin Prince · Independent artist</small></div>
+            <small>VIOLIN · SOUND · STORY</small>
+          </div>
+        </div>
+        <div class="hero-seal" aria-label="Violin Prince artist mark">VP<span>SOLO<br>VIOLIN</span></div>
+      </div>
+
     </section>
 
     <div class="genre-strip" aria-label="Music genres">
@@ -758,14 +825,48 @@
         <div class="artist-copy" data-reveal>
           <p class="eyebrow">The person behind the strings</p>
           <h2 id="artist-title">A familiar melody,<br><em>a different voice.</em></h2>
-          <p>I'm Prince Baidya, the violinist and creator behind Violin Prince. This project is about bringing familiar melodies into a different voice: the violin. Each cover begins with a song people already know and approaches it as an instrumental performance.</p>
-          <p>The repertoire moves across Bengali songs, Rabindra Sangeet, Hindi film and indie melodies, and English favourites. Some listeners arrive for a familiar tune; others discover a song they have never heard before. The aim is to give each melody room to speak through the instrument.</p>
-          <p>This website is the artist home: a place to understand the project, find selected performances and follow the official profiles. The companion music collection is where the full library, mood explorer, individual song pages and listening tools live.</p>
+          <p>I'm Prince Baidya, the violinist and creator behind Violin Prince. This is an independent music project built around a simple idea: a familiar song can reveal a different side of itself when its melody is carried by the violin.</p>
+          <p>My listening world moves across Bengali songs, Rabindra Sangeet, Hindi film and indie melodies, English-language favourites and music from different traditions. Each brings its own character. A lyrical Bengali melody, a much-loved film song and a contemporary pop ballad do not ask for the same phrasing or atmosphere, and that variety is part of what makes the instrument so interesting to explore.</p>
+          <p>I think of a cover as an interpretation, not an attempt to replace the original. The melody people recognise remains at the centre, while the violin gives it another voice through tone, articulation, dynamics and expressive phrasing. The goal is to keep the song's identity while allowing the instrumental performance to feel personal.</p>
+          <p>The work also continues after the performance is recorded. A clear violin tone, a balanced mix and a thoughtful sense of space help the listener stay close to the melody. Production choices should support the music rather than distract from it.</p>
+          <p>This website is the official artist home: a place to discover the project, read about its musical direction, find selected performances and follow the official profiles. The companion music collection is the deeper listening room, with the full library, mood explorer, individual song pages and listening tools.</p>
           <a class="button button-secondary" href="https://www.youtube.com/@violinprince" target="_blank" rel="noopener noreferrer">Watch the performances ↗</a>
         </div>
       </div>
     </section>
 
+
+
+    <section class="approach-section" id="approach" aria-labelledby="approach-title">
+      <div class="wrap">
+        <div class="approach-heading" data-reveal>
+          <p class="eyebrow">The creative idea behind each cover</p>
+          <h2 id="approach-title">Keep the melody.<br><em>Let the violin speak.</em></h2>
+          <p class="section-intro">A song is more than a sequence of notes. Its identity lives in the way a phrase rises, settles, pauses and returns. The Violin Prince approach is to start by listening closely, then find an instrumental voice that respects the original while making room for a new interpretation.</p>
+        </div>
+        <div class="approach-grid">
+          <article class="approach-card" data-reveal>
+            <span class="approach-number">01 / LISTEN</span>
+            <span class="approach-icon" aria-hidden="true">♫</span>
+            <h3>Understand the song first</h3>
+            <p>Before thinking about technique or effects, pay attention to the melody that makes the song memorable: its mood, movement, rhythm and emotional centre. That is the thread the violin performance needs to carry.</p>
+          </article>
+          <article class="approach-card" data-reveal>
+            <span class="approach-number">02 / INTERPRET</span>
+            <span class="approach-icon" aria-hidden="true">𝄞</span>
+            <h3>Give the melody a violin voice</h3>
+            <p>On violin, expression comes through more than pitch alone. Bow direction, articulation, dynamics, vibrato and the shape of a phrase can change how a familiar line feels while keeping it recognisable.</p>
+          </article>
+          <article class="approach-card" data-reveal>
+            <span class="approach-number">03 / PRESENT</span>
+            <span class="approach-icon" aria-hidden="true">◈</span>
+            <h3>Let the sound serve the music</h3>
+            <p>Recording and production help bring the performance to the listener. Tone, balance, ambience and supporting textures matter most when they make the violin clear, expressive and comfortable to hear.</p>
+          </article>
+        </div>
+        <p class="approach-note" data-reveal>Different musical traditions deserve their own character. The intention is not to make every song sound alike, but to let each melody lead the interpretation.</p>
+      </div>
+    </section>
 
     <section class="repertoire-section wrap" id="repertoire" aria-labelledby="repertoire-title">
       <div class="section-heading">
@@ -781,28 +882,28 @@
           <span class="repertoire-number">01 / BENGALI</span>
           <span class="repertoire-symbol" aria-hidden="true">আ</span>
           <h3>Bengali melodies</h3>
-          <p>Familiar songs and contemporary favourites, reimagined for violin.</p>
+          <p>From much-loved Bengali songs to contemporary favourites, this part of the repertoire explores how familiar melodies can be carried by the violin while retaining their lyrical character.</p>
           <span class="repertoire-link">Explore the collection ↗</span>
         </a>
         <a class="repertoire-card repertoire-rabindra" href="/violin-prince-website/#music" data-reveal>
           <span class="repertoire-number">02 / RABINDRA SANGEET</span>
           <span class="repertoire-symbol" aria-hidden="true">র</span>
           <h3>Rabindra Sangeet</h3>
-          <p>Poetic melodies and expressive musical lines in an instrumental voice.</p>
+          <p>Rabindra Sangeet brings poetry and melody together. These interpretations give the musical line space to unfold through the violin's phrasing, tone and expressive range.</p>
           <span class="repertoire-link">Explore the collection ↗</span>
         </a>
         <a class="repertoire-card repertoire-hindi" href="/violin-prince-website/#music" data-reveal>
           <span class="repertoire-number">03 / HINDI</span>
           <span class="repertoire-symbol" aria-hidden="true">हि</span>
           <h3>Hindi favourites</h3>
-          <p>Film songs and indie melodies shaped around the violin's singing tone.</p>
+          <p>From evergreen cinema melodies to newer Hindi and indie songs, the violin offers a singing tone for exploring the emotion and shape of a familiar tune.</p>
           <span class="repertoire-link">Explore the collection ↗</span>
         </a>
         <a class="repertoire-card repertoire-world" href="/violin-prince-website/#music" data-reveal>
           <span class="repertoire-number">04 / ENGLISH & BEYOND</span>
           <span class="repertoire-symbol" aria-hidden="true">♪</span>
           <h3>Songs from elsewhere</h3>
-          <p>English-language favourites and melodies that travel across borders.</p>
+          <p>English-language pop, ballads and other familiar melodies widen the musical conversation, showing how the violin can move between styles without losing its own voice.</p>
           <span class="repertoire-link">Explore the collection ↗</span>
         </a>
       </div>
@@ -822,37 +923,37 @@
           <a class="track-image" href="/violin-prince-website/kal-ho-na-ho/" aria-label="Explore Kal Ho Naa Ho violin cover">
             <img src="https://i.ytimg.com/vi/FlA76nbkReM/hqdefault.jpg" width="480" height="300" alt="Kal Ho Naa Ho violin cover artwork" loading="lazy"><span class="track-play" aria-hidden="true">▶</span>
           </a>
-          <div class="track-copy"><small>Hindi · Violin cover</small><h3>Kal Ho Naa Ho</h3><p>A much-loved melody reimagined on violin.</p><a href="/violin-prince-website/kal-ho-na-ho/">Explore this performance ↗</a></div>
+          <div class="track-copy"><small>Hindi · Violin cover</small><h3>Kal Ho Naa Ho</h3><p>A much-loved Hindi film melody brought into a solo violin setting. The performance keeps the tune at the centre and invites listeners to hear its familiar shape in a new way.</p><a href="/violin-prince-website/kal-ho-na-ho/">Explore this performance ↗</a></div>
         </article>
         <article class="track-card" data-reveal>
           <a class="track-image" href="/violin-prince-website/tere-paas-main/" aria-label="Explore Tere Paas Main violin cover">
             <img src="https://i.ytimg.com/vi/FOV-lwpwcd0/hqdefault.jpg" width="480" height="300" alt="Tere Paas Main violin cover artwork" loading="lazy"><span class="track-play" aria-hidden="true">▶</span>
           </a>
-          <div class="track-copy"><small>Hindi · Violin cover</small><h3>Tere Paas Main</h3><p>A gentle instrumental interpretation.</p><a href="/violin-prince-website/tere-paas-main/">Explore this performance ↗</a></div>
+          <div class="track-copy"><small>Hindi · Violin cover</small><h3>Tere Paas Main</h3><p>A gentle, violin-led reading of a contemporary Hindi melody, with the instrumental line taking the place of the vocal lead and giving the song a different perspective.</p><a href="/violin-prince-website/tere-paas-main/">Explore this performance ↗</a></div>
         </article>
         <article class="track-card" data-reveal>
           <a class="track-image" href="/violin-prince-website/say-you-wont-let-go/" aria-label="Explore Say You Won't Let Go violin cover">
             <img src="https://i.ytimg.com/vi/3NHpKon_Uq8/hqdefault.jpg" width="480" height="300" alt="Say You Won't Let Go violin cover artwork" loading="lazy"><span class="track-play" aria-hidden="true">▶</span>
           </a>
-          <div class="track-copy"><small>English · Violin cover</small><h3>Say You Won't Let Go</h3><p>An intimate violin take on a modern favourite.</p><a href="/violin-prince-website/say-you-wont-let-go/">Explore this performance ↗</a></div>
+          <div class="track-copy"><small>English · Violin cover</small><h3>Say You Won't Let Go</h3><p>A modern English-language ballad approached as a solo violin performance, keeping the melody close and allowing its emotional character to guide the phrasing.</p><a href="/violin-prince-website/say-you-wont-let-go/">Explore this performance ↗</a></div>
         </article>
         <article class="track-card" data-reveal>
           <a class="track-image" href="/violin-prince-website/hai-apna-dil-to-awara/" aria-label="Explore Hai Apna Dil To Awara violin cover">
             <img src="https://i.ytimg.com/vi/StnvyGduJ0s/hqdefault.jpg" width="480" height="300" alt="Hai Apna Dil To Awara violin cover artwork" loading="lazy"><span class="track-play" aria-hidden="true">▶</span>
           </a>
-          <div class="track-copy"><small>Hindi classic · Violin cover</small><h3>Hai Apna Dil To Awara</h3><p>A classic melody carried by the violin.</p><a href="/violin-prince-website/hai-apna-dil-to-awara/">Explore this performance ↗</a></div>
+          <div class="track-copy"><small>Hindi classic · Violin cover</small><h3>Hai Apna Dil To Awara</h3><p>An evergreen Hindi film favourite revisited through a relaxed, string-led interpretation that lets the familiar tune remain front and centre.</p><a href="/violin-prince-website/hai-apna-dil-to-awara/">Explore this performance ↗</a></div>
         </article>
         <article class="track-card" data-reveal>
           <a class="track-image" href="/violin-prince-website/dandelions/" aria-label="Explore Dandelions violin cover">
             <img src="https://i.ytimg.com/vi/lTySNtT0rzs/hqdefault.jpg" width="480" height="300" alt="Dandelions violin cover artwork" loading="lazy"><span class="track-play" aria-hidden="true">▶</span>
           </a>
-          <div class="track-copy"><small>English · Violin cover</small><h3>Dandelions</h3><p>A modern favourite translated into a violin-led interpretation.</p><a href="/violin-prince-website/dandelions/">Explore this performance ↗</a></div>
+          <div class="track-copy"><small>English · Violin cover</small><h3>Dandelions</h3><p>A contemporary English-language favourite translated into an instrumental setting, with the violin carrying the main melodic line.</p><a href="/violin-prince-website/dandelions/">Explore this performance ↗</a></div>
         </article>
         <article class="track-card" data-reveal>
           <a class="track-image" href="/violin-prince-website/preme-pora-baron/" aria-label="Explore Preme Pora Baron violin cover">
             <img src="https://i.ytimg.com/vi/UK7JYzoKKd4/hqdefault.jpg" width="480" height="300" alt="Preme Pora Baron violin cover artwork" loading="lazy"><span class="track-play" aria-hidden="true">▶</span>
           </a>
-          <div class="track-copy"><small>Bengali · Violin cover</small><h3>Preme Pora Baron</h3><p>A Bengali song brought into the Violin Prince repertoire.</p><a href="/violin-prince-website/preme-pora-baron/">Explore this performance ↗</a></div>
+          <div class="track-copy"><small>Bengali · Violin cover</small><h3>Preme Pora Baron</h3><p>A Bengali melody brought into the Violin Prince repertoire, celebrating the expressive possibilities of Bengali music through a solo violin interpretation.</p><a href="/violin-prince-website/preme-pora-baron/">Explore this performance ↗</a></div>
         </article>
       </div>
     </section>
@@ -915,8 +1016,9 @@
         <div class="studio-copy" data-reveal>
           <p class="eyebrow">Beyond the performance</p>
           <h2 id="studio-title">The craft behind <em>the sound.</em></h2>
-          <p class="studio-lead">A violin recording is shaped by more than the notes. The recording, tone, dynamics and sense of space all influence how a performance reaches the listener.</p>
-          <p>The Violin Production Playbook is a practical guide created by Prince Baidya for violinists and home-recording musicians. It organises tools by purpose and walks through starting points for a natural lead, an expressive indie tone and a fuller chorus sound.</p>
+          <p class="studio-lead">A violin recording is shaped by more than the notes. The instrument's natural tone, the performance dynamics, microphone perspective, room character and final balance all influence how a melody reaches the listener.</p>
+          <p>The Violin Production Playbook is a practical guide created by Prince Baidya for violinists and home-recording musicians. It organises recording and processing ideas by purpose, from clean capture and corrective tone shaping to expressive colour, ambience and mix placement.</p>
+          <p>The guiding principle is restraint with intention: begin with a performance that communicates clearly, then use production to support its character. A warm tone does not need to become muddy, and a spacious sound should not push the melody away. The most useful setting is the one that serves the song.</p>
           <a class="button button-primary" href="/violin-prince-website/production-playbook/">Explore the free production guide ↗</a>
         </div>
         <div class="studio-details" data-reveal>
