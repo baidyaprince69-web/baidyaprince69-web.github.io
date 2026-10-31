@@ -1,0 +1,368 @@
+/* Violin Prince official artist homepage — listening experiences */
+.listening-journey {
+  position: relative;
+  padding: 92px 0 100px;
+  overflow: hidden;
+  border-top: 1px solid rgba(231,189,114,.14);
+  border-bottom: 1px solid rgba(231,189,114,.14);
+  background:
+    radial-gradient(ellipse at 8% 10%, rgba(43,112,151,.18), transparent 36rem),
+    radial-gradient(ellipse at 94% 85%, rgba(231,189,114,.07), transparent 30rem),
+    linear-gradient(145deg, #0a1b2c 0%, #071321 70%);
+}
+.listening-journey::before {
+  content: "♫";
+  position: absolute;
+  right: 4%;
+  top: 4%;
+  color: rgba(231,189,114,.045);
+  font: 300 clamp(180px,28vw,360px)/1 var(--serif);
+  pointer-events: none;
+}
+.listening-journey-inner { position: relative; z-index: 1; }
+.listening-journey-heading { max-width: 760px; margin-bottom: 34px; }
+.listening-journey-heading h2 { max-width: 700px; }
+.listening-journey-layout {
+  display: grid;
+  grid-template-columns: minmax(230px,.72fr) minmax(0,1.28fr);
+  gap: 22px;
+  align-items: stretch;
+}
+.listening-mood-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  align-content: start;
+}
+.listening-mood-choice {
+  min-height: 106px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid rgba(231,189,114,.18);
+  border-radius: 13px;
+  color: var(--ivory);
+  background: rgba(255,255,255,.035);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color .2s ease, background .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+.listening-mood-choice:hover {
+  transform: translateY(-2px);
+  border-color: rgba(245,217,157,.55);
+  background: rgba(231,189,114,.07);
+}
+.listening-mood-choice[aria-pressed="true"] {
+  border-color: rgba(245,217,157,.82);
+  background: linear-gradient(145deg, rgba(231,189,114,.16), rgba(255,255,255,.04));
+  box-shadow: inset 0 0 0 1px rgba(231,189,114,.12), 0 10px 28px rgba(0,0,0,.16);
+}
+.listening-mood-choice:focus-visible,
+.listening-track:focus-visible,
+.listen-note summary:focus-visible {
+  outline: 2px solid var(--gold-bright);
+  outline-offset: 4px;
+}
+.listening-mood-choice small {
+  color: var(--gold);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: .16em;
+}
+.listening-mood-choice strong {
+  font: 600 21px/1.05 var(--serif);
+}
+.listening-mood-choice span {
+  color: #9eacb9;
+  font-size: 9px;
+}
+.listening-result {
+  min-height: 230px;
+  padding: 22px;
+  border: 1px solid rgba(231,189,114,.2);
+  border-radius: 17px;
+  background: linear-gradient(150deg, rgba(255,255,255,.06), rgba(255,255,255,.018));
+  box-shadow: 0 20px 50px rgba(0,0,0,.18);
+}
+.listening-result-empty {
+  min-height: 185px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.listening-result-symbol {
+  margin-bottom: 10px;
+  color: var(--gold-bright);
+  font: 400 32px/1 var(--serif);
+}
+.listening-result-empty strong {
+  color: var(--ivory);
+  font: 600 25px/1.1 var(--serif);
+}
+.listening-result-empty p {
+  max-width: 420px;
+  margin: 9px 0 0;
+  color: #aebbc7;
+  font-size: 11px;
+  line-height: 1.8;
+}
+.listening-result-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+.listening-result-heading small {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--gold);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+.listening-result-heading h3 {
+  margin: 0;
+  color: var(--ivory);
+  font: 600 clamp(23px,3vw,31px)/1.08 var(--serif);
+}
+.listening-result-heading p {
+  max-width: 340px;
+  margin: 0;
+  color: #aebbc7;
+  font-size: 10px;
+  line-height: 1.7;
+}
+.listening-track-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 12px;
+}
+.listening-track {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 104px minmax(0,1fr);
+  gap: 13px;
+  align-items: center;
+  padding: 9px;
+  border: 1px solid rgba(231,189,114,.13);
+  border-radius: 12px;
+  color: inherit;
+  background: rgba(3,10,18,.3);
+  text-decoration: none;
+  transition: border-color .2s ease, background .2s ease;
+}
+.listening-track:hover {
+  border-color: rgba(231,189,114,.48);
+  background: rgba(231,189,114,.055);
+}
+.listening-track img {
+  width: 104px;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  border-radius: 7px;
+  background: #101e2d;
+}
+.listening-track-copy { min-width: 0; }
+.listening-track-copy small {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--gold);
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+.listening-track-copy strong {
+  display: block;
+  color: var(--ivory);
+  font: 600 19px/1.08 var(--serif);
+}
+.listening-track-copy span {
+  display: block;
+  margin-top: 7px;
+  color: #9eacb9;
+  font-size: 8px;
+  font-weight: 700;
+}
+.listening-journey-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  margin-top: 22px;
+}
+.listening-journey-footer p {
+  margin: 0;
+  color: #9eacb9;
+  font-size: 10px;
+  line-height: 1.7;
+}
+.listening-journey-footer a {
+  color: var(--gold-bright);
+  font-size: 10px;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.listening-journey-footer a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.listen-closer-section { padding: 96px 0 104px; }
+.listen-closer-grid {
+  display: grid;
+  grid-template-columns: minmax(0,.78fr) minmax(0,1.22fr);
+  gap: clamp(32px,6vw,78px);
+  align-items: start;
+}
+.listen-closer-intro { position: sticky; top: 112px; }
+.listen-closer-intro h2 { max-width: 480px; }
+.listen-closer-intro .section-intro { max-width: 450px; }
+.listen-closer-aside {
+  margin-top: 24px;
+  padding: 17px 19px;
+  border-left: 2px solid var(--gold);
+  color: #bec9d3;
+  background: rgba(255,255,255,.025);
+  font-size: 10px;
+  line-height: 1.85;
+}
+.listen-notes { border-top: 1px solid rgba(231,189,114,.2); }
+.listen-note { border-bottom: 1px solid rgba(231,189,114,.2); }
+.listen-note summary {
+  position: relative;
+  display: grid;
+  grid-template-columns: 48px minmax(0,1fr) 24px;
+  gap: 13px;
+  align-items: center;
+  padding: 19px 0;
+  color: var(--ivory);
+  cursor: pointer;
+  list-style: none;
+}
+.listen-note summary::-webkit-details-marker { display: none; }
+.listen-note-number {
+  color: var(--gold);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: .14em;
+}
+.listen-note-title {
+  display: block;
+  font: 600 23px/1.1 var(--serif);
+}
+.listen-note-subtitle {
+  display: block;
+  margin-top: 5px;
+  color: #8fa0b1;
+  font-size: 9px;
+  line-height: 1.5;
+}
+.listen-note-toggle {
+  width: 23px;
+  height: 23px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(231,189,114,.3);
+  border-radius: 50%;
+  color: var(--gold-bright);
+  font-size: 14px;
+  transition: transform .2s ease, background .2s ease;
+}
+.listen-note[open] .listen-note-toggle {
+  transform: rotate(45deg);
+  background: rgba(231,189,114,.1);
+}
+.listen-note-content {
+  padding: 0 48px 20px 61px;
+  color: #b5c1cc;
+  font-size: 11px;
+  line-height: 1.9;
+}
+.listen-note-content p { margin: 0; }
+.listen-note-content p + p { margin-top: 10px; }
+.artist-extra-note {
+  padding: 78px 0 88px;
+  border-top: 1px solid rgba(231,189,114,.13);
+  background:
+    radial-gradient(ellipse at 88% 50%, rgba(44,108,146,.13), transparent 30rem),
+    rgba(255,255,255,.012);
+}
+.artist-extra-grid {
+  display: grid;
+  grid-template-columns: minmax(0,1.1fr) minmax(240px,.9fr);
+  gap: clamp(28px,6vw,75px);
+  align-items: center;
+}
+.artist-extra-copy h2 { max-width: 690px; }
+.artist-extra-copy p:not(.eyebrow) {
+  max-width: 690px;
+  color: #b7c3ce;
+  font-size: 12px;
+  line-height: 1.95;
+}
+.artist-extra-manifesto {
+  padding: 28px;
+  border: 1px solid rgba(231,189,114,.22);
+  border-radius: 18px;
+  background: linear-gradient(155deg,rgba(255,255,255,.055),rgba(255,255,255,.018));
+  box-shadow: 0 18px 48px rgba(0,0,0,.17);
+}
+.artist-extra-manifesto small {
+  color: var(--gold);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+.artist-extra-manifesto blockquote {
+  margin: 16px 0 0;
+  color: #f1e7d4;
+  font: italic 29px/1.23 var(--serif);
+}
+.artist-extra-manifesto p {
+  margin: 15px 0 0;
+  color: #9eacb9;
+  font-size: 10px;
+  line-height: 1.8;
+}
+@media (max-width: 980px) {
+  .listening-journey { padding: 76px 0 82px; }
+  .listening-journey-layout { grid-template-columns: 1fr; }
+  .listening-mood-list { grid-template-columns: repeat(4,minmax(0,1fr)); }
+  .listening-mood-choice { min-height: 94px; padding: 13px; }
+  .listening-mood-choice strong { font-size: 18px; }
+  .listen-closer-grid { grid-template-columns: 1fr; gap: 28px; }
+  .listen-closer-intro { position: static; }
+  .listen-closer-intro h2 { max-width: 700px; }
+  .listen-closer-intro .section-intro { max-width: 700px; }
+}
+@media (max-width: 760px) {
+  .listening-journey { padding: 66px 0 72px; }
+  .listening-mood-list { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .listening-result { padding: 16px; }
+  .listening-result-heading { display: block; }
+  .listening-result-heading p { margin-top: 8px; }
+  .listening-track-grid { grid-template-columns: 1fr; }
+  .listening-journey-footer { align-items: flex-start; flex-direction: column; }
+  .listen-closer-section { padding: 72px 0 78px; }
+  .artist-extra-note { padding: 66px 0 72px; }
+  .artist-extra-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 460px) {
+  .listening-track { grid-template-columns: 88px minmax(0,1fr); gap: 10px; }
+  .listening-track img { width: 88px; }
+  .listening-track-copy strong { font-size: 17px; }
+  .listen-note summary { grid-template-columns: 36px minmax(0,1fr) 23px; gap: 8px; }
+  .listen-note-title { font-size: 20px; }
+  .listen-note-content { padding: 0 0 19px 44px; }
+  .artist-extra-manifesto { padding: 21px; }
+  .artist-extra-manifesto blockquote { font-size: 25px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .listening-mood-choice, .listening-track, .listen-note-toggle { transition: none; }
+  .listening-mood-choice:hover { transform: none; }
+}
