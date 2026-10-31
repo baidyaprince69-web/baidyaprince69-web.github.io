@@ -761,6 +761,8 @@
     }
 
   </style>
+  <link rel="stylesheet" href="/artist-home-expansion.css?v=20261101">
+  <script src="/artist-home-interactions.js?v=20261101" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -775,6 +777,8 @@
         <a href="#repertoire">Music styles</a>
         <a href="#approach">Approach</a>
         <a href="#performances">Performances</a>
+        <a href="#discover">Discover</a>
+        <a href="#listen-closer">Listening guide</a>
         <a href="#studio">Production</a>
         <a href="#connect">Follow</a>
         <a class="nav-collection" href="/violin-prince-website/">Explore the collection ↗</a>
@@ -959,6 +963,44 @@
     </section>
 
 
+ 
+    <section class="listening-journey" id="discover" aria-labelledby="listeningJourneyTitle">
+      <div class="wrap listening-journey-inner">
+        <header class="listening-journey-heading" data-reveal>
+          <p class="eyebrow">A listening path, chosen by you</p>
+          <h2 id="listeningJourneyTitle">Where should the melody <em>take you?</em></h2>
+          <p class="section-intro">Not sure which performance to open first? Choose the feeling or musical world that fits this moment. The page will suggest a couple of places to begin.</p>
+        </header>
+        <div class="listening-journey-layout" data-listening-finder>
+          <div class="listening-mood-list" role="group" aria-label="Choose a listening mood">
+            <button class="listening-mood-choice" type="button" data-listening-mood="nostalgic" aria-pressed="false">
+              <small>01 / MEMORY</small><strong>Nostalgic</strong><span>Familiar melodies</span>
+            </button>
+            <button class="listening-mood-choice" type="button" data-listening-mood="reflective" aria-pressed="false">
+              <small>02 / QUIET MOMENT</small><strong>Reflective</strong><span>Gentle, expressive songs</span>
+            </button>
+            <button class="listening-mood-choice" type="button" data-listening-mood="bengali" aria-pressed="false">
+              <small>03 / ROOTS</small><strong>Bengali soul</strong><span>Bengali &amp; Tagore melodies</span>
+            </button>
+            <button class="listening-mood-choice" type="button" data-listening-mood="modern" aria-pressed="false">
+              <small>04 / CONTEMPORARY</small><strong>Modern</strong><span>English pop &amp; new favourites</span>
+            </button>
+          </div>
+          <div class="listening-result" id="listeningJourneyOutput" aria-live="polite" aria-atomic="true">
+            <div class="listening-result-empty">
+              <span class="listening-result-symbol" aria-hidden="true">♫</span>
+              <strong>Your listening path starts here.</strong>
+              <p>Select one of the moods to discover two violin performances. You can change your choice at any time.</p>
+            </div>
+          </div>
+        </div>
+        <div class="listening-journey-footer">
+          <p>Every suggestion opens a dedicated performance page. No autoplay; you decide what to hear next.</p>
+          <a href="/violin-prince-website/">Browse the complete music collection ↗</a>
+        </div>
+      </div>
+    </section>
+
     <section class="pathway-section wrap" aria-labelledby="pathway-title">
       <div class="section-heading">
         <div>
@@ -1035,6 +1077,64 @@
             <div><h3>Make room for the melody</h3><p>Use ambience, delay and stereo choices with care so the lead stays clear in the mix.</p></div>
           </div>
           <p class="studio-footnote">The guide offers audition starting points, not universal presets. Listen in the context of the full mix.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="listen-closer-section wrap" id="listen-closer" aria-labelledby="listenCloserTitle">
+      <div class="listen-closer-grid">
+        <header class="listen-closer-intro" data-reveal>
+          <p class="eyebrow">A listener's little guide</p>
+          <h2 id="listenCloserTitle">Hear the details <em>between the notes.</em></h2>
+          <p class="section-intro">A violin cover puts the melody in the foreground. As you listen, there are small details you can notice beyond simply recognising the song.</p>
+          <div class="listen-closer-aside">There is no single correct way to listen. These are invitations to notice the choices that give an instrumental performance its own character.</div>
+        </header>
+        <div class="listen-notes">
+          <details class="listen-note" data-reveal>
+            <summary>
+              <span class="listen-note-number">01</span>
+              <span><span class="listen-note-title">Melody &amp; phrasing</span><span class="listen-note-subtitle">How a musical sentence begins, moves and resolves</span></span>
+              <span class="listen-note-toggle" aria-hidden="true">+</span>
+            </summary>
+            <div class="listen-note-content">
+              <p>Notice the shape of the main tune. Some phrases gently rise before settling; others hold a note or leave a little silence before continuing. Those decisions help the melody feel like a musical sentence rather than a row of separate notes.</p>
+              <p>Listen for the moments where the line seems to breathe. They are often just as important as the notes themselves.</p>
+            </div>
+          </details>
+          <details class="listen-note" data-reveal>
+            <summary>
+              <span class="listen-note-number">02</span>
+              <span><span class="listen-note-title">Tone &amp; articulation</span><span class="listen-note-subtitle">The texture and shape of each note</span></span>
+              <span class="listen-note-toggle" aria-hidden="true">+</span>
+            </summary>
+            <div class="listen-note-content">
+              <p>A violin can sound warm, clear, delicate or energetic. The way a note starts, connects to the next one and releases at the end changes the character of a phrase.</p>
+              <p>Try noticing the difference between a smooth, connected line and a more defined rhythmic passage. Both can be expressive when they suit the song.</p>
+            </div>
+          </details>
+          <details class="listen-note" data-reveal>
+            <summary>
+              <span class="listen-note-number">03</span>
+              <span><span class="listen-note-title">Dynamics &amp; expression</span><span class="listen-note-subtitle">How a performance grows, rests and returns</span></span>
+              <span class="listen-note-toggle" aria-hidden="true">+</span>
+            </summary>
+            <div class="listen-note-content">
+              <p>Listen for changes in intensity. A phrase may begin softly, gather energy and then relax again. These contrasts give a performance movement and help important parts of a melody stand out.</p>
+              <p>Expression does not always mean playing louder. Sometimes a quieter passage or a restrained note can carry the most meaning.</p>
+            </div>
+          </details>
+          <details class="listen-note" data-reveal>
+            <summary>
+              <span class="listen-note-number">04</span>
+              <span><span class="listen-note-title">Space &amp; atmosphere</span><span class="listen-note-subtitle">The environment around the violin sound</span></span>
+              <span class="listen-note-toggle" aria-hidden="true">+</span>
+            </summary>
+            <div class="listen-note-content">
+              <p>Notice how close or spacious the instrument feels. A little ambience can create a sense of depth, while a drier presentation can make the performance feel direct and intimate.</p>
+              <p>The aim is balance: the atmosphere should support the melody, not hide it.</p>
+            </div>
+          </details>
         </div>
       </div>
     </section>
