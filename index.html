@@ -440,33 +440,34 @@
       [data-reveal] { opacity:1; transform:none; }
     }
   
-    /* Official first-screen cover: use the original cinematic violin photograph. */
+    /* Editorial cover treatment: preserve the original photo and protect the performer as the focal point. */
     .hero {
       width: 100%;
       max-width: none;
-      min-height: min(860px, calc(100svh - 82px));
+      min-height: min(820px, calc(100svh - 82px));
       margin: 0;
-      padding: clamp(58px, 8vw, 112px) max(24px, calc((100vw - 1160px) / 2));
+      padding: 76px clamp(32px, 6.2vw, 104px) 86px;
       display: flex;
       align-items: center;
-      justify-content: flex-end;
+      justify-content: flex-start;
       position: relative;
       isolation: isolate;
       overflow: hidden;
       background-color: #071321;
       background-image:
         linear-gradient(90deg,
-          rgba(5, 15, 27, .02) 0%,
-          rgba(5, 15, 27, .08) 42%,
-          rgba(5, 15, 27, .42) 72%,
-          rgba(5, 15, 27, .60) 100%),
+          rgba(4, 13, 24, .86) 0%,
+          rgba(4, 13, 24, .70) 23%,
+          rgba(4, 13, 24, .35) 39%,
+          rgba(4, 13, 24, .08) 58%,
+          rgba(4, 13, 24, .04) 100%),
         linear-gradient(180deg,
-          rgba(4, 12, 22, .12) 0%,
-          transparent 28%,
+          rgba(4, 12, 22, .16) 0%,
+          transparent 30%,
           rgba(4, 12, 22, .18) 100%),
         url("/violin-prince-website/assets/violin-prince-cinematic-hero.jpg");
       background-size: cover;
-      background-position: center center;
+      background-position: center 47%;
       background-repeat: no-repeat;
     }
     .hero::before {
@@ -475,65 +476,106 @@
       inset: 0;
       z-index: 0;
       pointer-events: none;
-      background: linear-gradient(0deg, rgba(4, 12, 22, .16), transparent 24%);
+      background: radial-gradient(ellipse at 17% 50%, rgba(7, 24, 41, .25), transparent 46%);
     }
     .hero-copy {
       position: relative;
       z-index: 1;
-      width: min(560px, 48vw);
-      max-width: 560px;
-      margin-left: auto;
-      text-shadow: 0 2px 22px rgba(0, 0, 0, .34);
+      width: min(460px, 41vw);
+      max-width: 460px;
+      margin: 0;
+      text-shadow: 0 2px 22px rgba(0, 0, 0, .38);
+    }
+    .hero h1 {
+      max-width: 455px;
+      font-size: clamp(56px, 6.3vw, 86px);
+      line-height: .94;
+      letter-spacing: -.04em;
+      text-wrap: balance;
+    }
+    .hero h1 span {
+      color: #f0cd8a;
+      text-shadow: 0 2px 22px rgba(8, 18, 29, .36);
+    }
+    .hero-role { color: #f0dfc4; }
+    .hero-text {
+      max-width: 430px;
+      color: #e0e6eb;
+      line-height: 1.82;
+    }
+    .hero-actions { gap: 13px; margin-top: 28px; }
+    .hero-actions .button-primary {
+      box-shadow: 0 8px 28px rgba(231, 189, 114, .19);
+    }
+    .hero-actions .button-secondary {
+      border-color: rgba(245, 217, 157, .42);
+      background: rgba(5, 15, 27, .34);
+      backdrop-filter: blur(5px);
+    }
+    .hero-notes {
+      color: rgba(239, 231, 218, .78);
+      gap: 8px 17px;
+      font-size: 8px;
+      letter-spacing: .13em;
     }
     .hero-visual { display: none !important; }
-    .hero h1 { max-width: 590px; }
-    .hero-text { color: #d6dfe7; }
-    .hero-notes { color: #c2ced8; }
+
+    @media (min-width: 1500px) {
+      .hero { min-height: min(880px, calc(100svh - 82px)); }
+      .hero-copy { width: min(500px, 36vw); }
+    }
     @media (max-width: 980px) {
       .hero {
-        min-height: min(780px, calc(100svh - 82px));
-        padding-left: 34px;
-        padding-right: 34px;
-        background-position: 46% center;
+        min-height: min(760px, calc(100svh - 82px));
+        padding-left: 42px;
+        padding-right: 42px;
+        background-position: 49% center;
       }
-      .hero-copy { width: min(530px, 53vw); }
+      .hero-copy { width: min(440px, 47vw); }
+      .hero h1 { font-size: clamp(54px, 7vw, 74px); }
     }
     @media (max-width: 760px) {
       .hero {
         width: 100%;
-        min-height: calc(100svh - 72px);
-        padding: 330px 20px 48px;
+        min-height: max(740px, calc(100svh - 72px));
+        padding: 300px 22px 48px;
         align-items: flex-end;
-        justify-content: center;
+        justify-content: flex-start;
         background-size: auto 100%;
-        background-position: 43% center;
+        background-position: 38% center;
       }
       .hero::before {
         background:
           linear-gradient(0deg,
-            rgba(4, 12, 22, .96) 0%,
-            rgba(4, 12, 22, .84) 30%,
-            rgba(4, 12, 22, .34) 59%,
-            rgba(4, 12, 22, .06) 100%);
+            rgba(4, 12, 22, .97) 0%,
+            rgba(4, 12, 22, .90) 25%,
+            rgba(4, 12, 22, .57) 43%,
+            rgba(4, 12, 22, .12) 68%,
+            rgba(4, 12, 22, .04) 100%),
+          linear-gradient(90deg, rgba(4, 12, 22, .18), transparent 75%);
       }
       .hero-copy {
         width: 100%;
         max-width: 560px;
         margin: 0 auto;
-        padding: 0;
-        text-shadow: 0 2px 18px rgba(0, 0, 0, .44);
+        text-shadow: 0 2px 18px rgba(0, 0, 0, .48);
       }
-      .hero h1 { font-size: clamp(48px, 11vw, 68px); }
+      .hero h1 { max-width: 520px; font-size: clamp(52px, 10.5vw, 70px); }
       .hero-text { max-width: 520px; }
+      .hero-notes { margin-top: 22px; }
     }
     @media (max-width: 420px) {
       .hero {
-        min-height: calc(100svh - 72px);
-        padding: 300px 18px 40px;
-        background-position: 43% center;
+        min-height: max(720px, calc(100svh - 72px));
+        padding: 288px 18px 40px;
+        background-position: 38% center;
       }
-      .hero h1 { font-size: clamp(44px, 11.6vw, 56px); }
+      .hero h1 { font-size: clamp(48px, 11.5vw, 60px); }
       .hero-actions { flex-direction: column; align-items: stretch; }
+      .hero-actions .button { justify-content: center; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-actions .button { transition: none; }
     }
   </style>
 </head>
