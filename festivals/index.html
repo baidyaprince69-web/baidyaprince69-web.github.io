@@ -497,19 +497,19 @@
           <span class="date-pill" id="todayDate">8 November 2026 · Kolkata</span>
         </div>
         <div class="hero-actions">
-          <a class="button button-primary" href="#diwali">Enter the Diwali room <span aria-hidden="true">↘</span></a>
+          <a class="button button-primary" id="heroSeasonCta" href="#diwali">Enter the Diwali room ↘</a>
           <a class="button" href="#journey">Explore all seasons <span aria-hidden="true">↓</span></a>
         </div>
       </div>
-      <div class="hero-art" aria-label="Diwali-inspired artwork with warm festival lights">
+      <div class="hero-art" id="heroArt" aria-label="Diwali-inspired artwork with warm festival lights">
         <span class="lamp lamp-one" aria-hidden="true"></span>
         <span class="lamp lamp-two" aria-hidden="true"></span>
         <span class="lamp lamp-three" aria-hidden="true"></span>
         <div class="hero-art-frame">
-          <img src="https://i.ytimg.com/vi/pijJjHjaYD4/hqdefault.jpg" width="480" height="360" alt="Mayer Paayer Jaba Hoye Shyama Sangeet violin cover by Violin Prince" fetchpriority="high">
-          <div class="hero-art-caption"><span>Tonight's featured melody</span><span>01 / 03</span></div>
+          <img id="heroFeaturedImage" src="https://i.ytimg.com/vi/pijJjHjaYD4/hqdefault.jpg" width="480" height="360" alt="Mayer Paayer Jaba Hoye Shyama Sangeet violin cover by Violin Prince" fetchpriority="high">
+          <div class="hero-art-caption"><span id="heroFeaturedCaption">Tonight's featured melody</span><span id="heroFeaturedOrdinal">02 / 03</span></div>
         </div>
-        <div class="art-stamp" aria-hidden="true">A NIGHT<br>OF LIGHT</div>
+        <div class="art-stamp" id="heroStamp" aria-hidden="true">A NIGHT<br>OF LIGHT</div>
       </div>
     </section>
 
@@ -531,12 +531,12 @@
       </div>
       <div class="journey-grid">
         <a class="journey-card" data-room="durga" id="durgaCard" href="#durga">
-          <div class="room-kicker"><span>01 / October 2026</span><span class="room-status" id="durgaStatus">Archive</span></div>
+          <div class="room-kicker"><span>01 / AUTUMN</span><span class="room-status" id="durgaStatus">Archive</span></div>
           <div><h3>Durga Puja</h3><p>Autumn celebrations, familiar Bengali melodies and the sounds of home.</p></div>
           <div class="room-footer"><span>Revisit the Puja collection</span><span aria-hidden="true">↗</span></div>
         </a>
         <a class="journey-card is-current" data-room="diwali" id="diwaliCard" href="#diwali">
-          <div class="room-kicker"><span>02 / 8 November 2026</span><span class="room-status" id="diwaliStatus">Now playing</span></div>
+          <div class="room-kicker"><span>02 / FESTIVAL OF LIGHTS</span><span class="room-status" id="diwaliStatus">Now featuring</span></div>
           <div><h3>Diwali &amp; Kali Puja</h3><p>A night of lamps, Shyama Sangeet and Bengali devotional violin.</p></div>
           <div class="room-footer"><span>Enter the Diwali room</span><span aria-hidden="true">↗</span></div>
         </a>
@@ -551,7 +551,7 @@
     <section class="section diwali-room" id="diwali" aria-labelledby="diwaliTitle">
       <div class="wrap diwali-layout">
         <div class="diwali-copy">
-          <p class="eyebrow">The room that is glowing now · 08.11.2026</p>
+          <p class="eyebrow" id="diwaliSectionKicker">02 / THE KARTIK FESTIVAL WINDOW</p>
           <h2 id="diwaliTitle">A thousand lights.<br><em>One familiar melody.</em></h2>
           <p class="section-intro">In Bengal, Diwali arrives alongside Kali Puja. This special room brings together a Shyama Sangeet performance and the warmth of a familiar festive evening — a little music to accompany the lights.</p>
           <div class="festival-note">“Let the melody stay with the light.”</div>
@@ -580,7 +580,7 @@
     <section class="section wrap" id="durga" aria-labelledby="durgaTitle">
       <div class="section-heading">
         <div>
-          <p class="eyebrow">01 / The archive · October 2026</p>
+          <p class="eyebrow" id="durgaSectionKicker">01 / AUTUMN FESTIVAL ARCHIVE</p>
           <h2 id="durgaTitle">The Puja days <em>we carry with us.</em></h2>
           <p class="section-intro">Durga Puja may have passed, but its melodies remain part of the journey. Return to a Bengali festive performance from the collection.</p>
         </div>
@@ -615,7 +615,7 @@
       <div class="wrap">
         <div class="carol-heading">
           <div>
-            <p class="eyebrow">03 / The next chapter · December 2026</p>
+            <p class="eyebrow" id="christmasSectionKicker">03 / THE WINTER CHAPTER</p>
             <h2 id="christmasTitle">When the lights turn <em>to winter.</em></h2>
             <p class="section-intro">The next room is being prepared. Preview the Christmas carols already in the Violin Prince collection, then return as the season approaches for the full Christmas Strings feature.</p>
           </div>
@@ -723,51 +723,189 @@
         return values.year + "-" + values.month + "-" + values.day;
       }
 
+
+      /*
+       * Seasonal spotlight settings use Kolkata local dates.
+       * Festival days follow the lunisolar calendar, so add a year-specific
+       * override when the Kolkata festival dates are confirmed.
+       * Default windows are editorial campaign windows, not official dates.
+       */
+      var festivalCalendarByYear = {
+        "2026": {
+          durga: { start: "2026-10-10", end: "2026-10-21" },
+          diwali: { start: "2026-10-22", end: "2026-11-14" }
+        },
+        "2027": {
+          durga: { start: "2027-09-29", end: "2027-10-10" },
+          diwali: { start: "2027-10-21", end: "2027-11-14" }
+        }
+      };
+
+      var defaultFestivalWindows = {
+        durga: { startMonthDay: "09-15", endMonthDay: "10-20" },
+        diwali: { startMonthDay: "10-21", endMonthDay: "11-14" }
+      };
+
+      var seasonalFeatures = {
+        durga: {
+          image: "https://i.ytimg.com/vi/sR8Fb1uKvFA/hqdefault.jpg",
+          alt: "Dugga Elo Bengali Durga Puja violin cover by Violin Prince",
+          caption: "The autumn festival feature",
+          stamp: "DURGA PUJA",
+          aria: "Durga Puja seasonal artwork and featured violin performance",
+          cta: "#durga",
+          ctaLabel: "Enter the Durga Puja room ↘",
+          ordinal: "01 / 03"
+        },
+        diwali: {
+          image: "https://i.ytimg.com/vi/pijJjHjaYD4/hqdefault.jpg",
+          alt: "Mayer Paayer Jaba Hoye Shyama Sangeet violin cover by Violin Prince",
+          caption: "Tonight's featured melody",
+          stamp: "A NIGHT OF LIGHT",
+          aria: "Diwali-inspired artwork with warm festival lights",
+          cta: "#diwali",
+          ctaLabel: "Enter the Diwali room ↘",
+          ordinal: "02 / 03"
+        },
+        christmas: {
+          image: "https://i.ytimg.com/vi/bissQ67-Az8/hqdefault.jpg",
+          alt: "Hark the Herald Angels Sing Christmas violin cover by Violin Prince",
+          caption: "A winter melody for the season",
+          stamp: "CHRISTMAS STRINGS",
+          aria: "Christmas carol seasonal artwork and featured violin performance",
+          cta: "#christmas",
+          ctaLabel: "Enter the Christmas carol room ↘",
+          ordinal: "03 / 03"
+        },
+        interlude: {
+          image: "/assets/violin-prince-silhouette-hero.webp",
+          alt: "Violin Prince silhouette artwork",
+          caption: "The music between festivals",
+          stamp: "THREE SEASONS",
+          aria: "Violin Prince Festival Journey artwork",
+          cta: "#journey",
+          ctaLabel: "Explore all festival rooms ↘",
+          ordinal: "FESTIVAL JOURNEY"
+        }
+      };
+
+      function getFestivalWindow(year, name) {
+        var override = festivalCalendarByYear[String(year)];
+        if (override && override[name]) return override[name];
+
+        var defaults = defaultFestivalWindows[name];
+        return {
+          start: year + "-" + defaults.startMonthDay,
+          end: year + "-" + defaults.endMonthDay
+        };
+      }
+
+      function isInsideWindow(date, window) {
+        return date >= window.start && date <= window.end;
+      }
+
       function updateSeason() {
         var today = kolkataDate();
-        var status = "Festival archive";
-        var active = "";
-        var christmasMessage = "The carol room preview is open. The full seasonal feature arrives on 1 December.";
+        var year = Number(today.slice(0, 4));
+        var monthDay = today.slice(5);
+        var durgaWindow = getFestivalWindow(year, "durga");
+        var diwaliWindow = getFestivalWindow(year, "diwali");
+        var phase = "interlude";
+        var status = "Between festival seasons · Explore the archive";
+        var christmasMessage = "The seasonal rooms stay open all year. Durga Puja is the next chapter in the festival journey.";
+        var feature = seasonalFeatures.interlude;
 
-        if (today >= "2026-10-17" && today <= "2026-10-21") {
-          active = "durga";
-          status = "Now playing · Durga Puja";
-        } else if (today >= "2026-10-22" && today <= "2026-11-14") {
-          active = "diwali";
-          status = "Now playing · Diwali & Kali Puja";
-        } else if (today >= "2026-11-15" && today <= "2026-11-30") {
-          active = "christmas";
-          status = "Next chapter · Christmas preview";
-          christmasMessage = "The Christmas preview is open. The full seasonal feature arrives on 1 December.";
-        } else if (today >= "2026-12-01" && today <= "2027-01-06") {
-          active = "christmas";
-          status = "Now playing · Christmas Strings";
-          christmasMessage = "Christmas Strings is the featured room. Explore the carols and share a listening moment.";
-        } else if (today < "2026-10-17") {
-          active = "durga";
-          status = "Coming this season · Durga Puja";
-        } else if (today > "2027-01-06") {
-          active = "christmas";
-          status = "Seasonal archive · Christmas Strings";
-          christmasMessage = "The Christmas room is now part of the archive. A new festival chapter will be announced here.";
+        if (isInsideWindow(today, durgaWindow)) {
+          phase = "durga";
+          status = "Currently featuring · Durga Puja";
+          christmasMessage = "The Christmas carol room is coming later in the year. Explore the current Durga Puja feature first.";
+          feature = seasonalFeatures.durga;
+        } else if (isInsideWindow(today, diwaliWindow)) {
+          phase = "diwali";
+          status = "Currently featuring · Diwali & Kali Puja";
+          christmasMessage = "The Christmas carol room preview opens on 15 November. Come back for the next seasonal chapter.";
+          feature = seasonalFeatures.diwali;
+        } else if (monthDay >= "11-15" && monthDay <= "11-30") {
+          phase = "christmas-preview";
+          status = "Next feature · Christmas Strings preview";
+          christmasMessage = "The Christmas preview is open. Christmas Strings becomes the featured room on 1 December.";
+          feature = seasonalFeatures.christmas;
+        } else if (monthDay >= "12-01" || monthDay <= "01-06") {
+          phase = "christmas";
+          status = "Currently featuring · Christmas Strings";
+          christmasMessage = "Christmas Strings is currently featured. Explore the carols and share the listening room.";
+          feature = seasonalFeatures.christmas;
         }
 
+        var dateLabel = new Intl.DateTimeFormat("en-IN", {
+          timeZone: "Asia/Kolkata",
+          day: "numeric",
+          month: "long",
+          year: "numeric"
+        }).format(new Date());
+
         document.getElementById("seasonStatus").textContent = status;
-        document.getElementById("todayDate").textContent =
-          new Intl.DateTimeFormat("en-IN", {
-            timeZone: "Asia/Kolkata", day: "numeric", month: "long", year: "numeric"
-          }).format(new Date()) + " · Kolkata";
+        document.getElementById("todayDate").textContent = dateLabel + " · Kolkata";
         document.getElementById("christmasCountdown").textContent = christmasMessage;
+
+        var heroImage = document.getElementById("heroFeaturedImage");
+        var heroArt = document.getElementById("heroArt");
+        var heroCaption = document.getElementById("heroFeaturedCaption");
+        var heroOrdinal = document.getElementById("heroFeaturedOrdinal");
+        var heroStamp = document.getElementById("heroStamp");
+        var heroCta = document.getElementById("heroSeasonCta");
+
+        heroImage.src = feature.image;
+        heroImage.alt = feature.alt;
+        heroArt.setAttribute("aria-label", feature.aria);
+        heroCaption.textContent = feature.caption;
+        heroOrdinal.textContent = feature.ordinal;
+        heroStamp.textContent = feature.stamp;
+        heroCta.href = feature.cta;
+        heroCta.textContent = feature.ctaLabel;
+
+        var highlightedRoom = phase === "christmas-preview" ? "christmas" :
+          (phase === "interlude" ? "" : phase);
 
         ["durga", "diwali", "christmas"].forEach(function (room) {
           var card = document.getElementById(room + "Card");
-          if (card) card.classList.toggle("is-current", room === active);
+          if (card) card.classList.toggle("is-current", room === highlightedRoom);
         });
-        document.getElementById("durgaStatus").textContent = active === "durga" ? "Now playing" : "Archive";
-        document.getElementById("diwaliStatus").textContent = active === "diwali" ? "Now playing" : (today > "2026-11-14" ? "Archive" : "Festival special");
-        document.getElementById("christmasStatus").textContent = (today >= "2026-12-01" && today <= "2027-01-06") ? "Now playing" : ((today >= "2026-11-15" && today < "2026-12-01") ? "Next chapter" : "Archive");
+
+        var durgaStatus = "Archive";
+        var diwaliStatus = "Archive";
+        var christmasStatus = "Archive";
+
+        if (phase === "durga") {
+          durgaStatus = "Now featuring";
+          diwaliStatus = "Coming next";
+          christmasStatus = "Coming later";
+        } else if (phase === "diwali") {
+          diwaliStatus = "Now featuring";
+          christmasStatus = "Coming next";
+        } else if (phase === "christmas-preview") {
+          christmasStatus = "Preview open";
+        } else if (phase === "christmas") {
+          christmasStatus = "Now featuring";
+        } else {
+          durgaStatus = "Coming next";
+        }
+
+        document.getElementById("durgaStatus").textContent = durgaStatus;
+        document.getElementById("diwaliStatus").textContent = diwaliStatus;
+        document.getElementById("christmasStatus").textContent = christmasStatus;
+
+        document.getElementById("durgaSectionKicker").textContent =
+          phase === "durga" ? "01 / CURRENTLY FEATURED · DURGA PUJA" : "01 / AUTUMN FESTIVAL COLLECTION";
+        document.getElementById("diwaliSectionKicker").textContent =
+          phase === "diwali" ? "02 / CURRENTLY FEATURED · DIWALI & KALI PUJA" : "02 / THE KARTIK FESTIVAL COLLECTION";
+        document.getElementById("christmasSectionKicker").textContent =
+          phase === "christmas" ? "03 / CURRENTLY FEATURED · CHRISTMAS STRINGS" :
+          (phase === "christmas-preview" ? "03 / NEXT FEATURE · CHRISTMAS PREVIEW" : "03 / THE WINTER CAROL COLLECTION");
       }
       updateSeason();
+
+      
 
       document.querySelectorAll(".video-shell[data-video-id]").forEach(function (shell) {
         var button = shell.querySelector("button");
